@@ -14,20 +14,11 @@ pool:
 
 container: ubuntu:16.04
 
-steps:
-  - task: Maven@3
-    inputs:
-      mavenPomFile: "pom.xml"
-      mavenOptions: "-Xmx3072m"
-      javaHomeOption: "JDKVersion"
-      jdkVersionOption: $(jdk_version)
-      jdkArchitectureOption: "x64"
-      publishJUnitResults: true
-      testResultsFiles: "**/TEST-*.xml"
-      goals: "package"
-  - task: PublishCodeCoverageResults@1
-    inputs:
-      codeCoverageTool: "JaCoCo"
-      summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
-      reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
-      failIfCoverageEmpty: true
+jobs:
+- job: A
+  steps:
+  - bash: echo "A"
+
+- job: B
+  steps:
+  - bash: echo "B"
