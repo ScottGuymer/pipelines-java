@@ -15,10 +15,10 @@ pool:
 container: ubuntu:16.04
 
 jobs:
-- job: A
-  steps:
-  - bash: echo "A"
+  - job: A
+    steps:
+    - bash: echo "A"
 
-- job: B
-  steps:
-  - bash: echo "B"
+  - job: B
+    steps:
+    - bash: echo "B"
