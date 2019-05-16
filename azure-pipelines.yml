@@ -9,3 +9,10 @@ jobs:
   - job: B
     steps:
     - bash: echo "B"
+
+  - job: C
+    steps:
+    - bash: echo "Dependent C"
+    dependsOn:
+    - A
+    - B
