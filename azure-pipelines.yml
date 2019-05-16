@@ -8,7 +8,7 @@ jobs:
     - bash: echo "A"
 
   - job: B
-    container: debian
+    container: debian:stretch
     steps:
     - bash: echo "B"
 
